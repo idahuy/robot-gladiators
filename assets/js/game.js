@@ -5,12 +5,16 @@ var playerMoney = 10;
 
 console.log(playerName, playerAttack, playerHealth)
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//    * Fight all enemy-robots
+
 // this creates a function named "fight"
-var fight = function fight() {
+var fight = function(enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -65,11 +69,14 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
   else {
     window.alert("You need to choose a valid option. Try again!");
   }
+  
 
     // Subtract the value of 'enemyAttack' from the value of 'playerhealth' and use that result to update the value in the 'playerHealth' variable
 
     // Log a resulting message to the console so we know that it worked
 
   };
-// executes function "fight"
-  fight();
+
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
